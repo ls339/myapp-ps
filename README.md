@@ -45,7 +45,17 @@ docker compose up -d --build
 
 Access the frontend from http://localhost:8080/api/display
 
+### Cleanup
+
+```
+docker compose down
+```
+
+```
+cd .. && rm -rf myapps-ps
+```
+
 ## TODO
 
 - Add task scheduler
-- Add taask worker
+- Add task worker
