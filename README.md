@@ -33,7 +33,7 @@ echo postgresql://postgres:`cat postgres_password.txt`@db:5432/mydb > database_u
 
 Download the deployment script.
 ```
-curl -O https://raw.githubusercontent.com/ls339/myapp-ps/refs/heads/main/README.md
+curl -O https://raw.githubusercontent.com/ls339/myapp-ps/refs/heads/ls339/dev/compose.yaml
 ```
 
 ### Running
