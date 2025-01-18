@@ -1,17 +1,17 @@
 # myapp-ps
 An exercise in building a frontend service that returns a string from an API endpoint. The frontend service calls a backend service API that returns the string. The backend service fetches the string from a database. 
 
-![Diagram](./assets/images/diagram.png)
+![Diagram](./assets/images/diagram1.png)
 
 ## Installation
 
 ### Requirements
 
 ```
+POSIX shell
 docker
 openssl
 curl
-POSIX shell
 ```
 
 ### Setup
@@ -21,14 +21,14 @@ In a terminal, create and use a working directory.
 mkdir myapp-ps && cd myapp-ps
 ```
 
-Generate and insert a password for the database into a file named `postgres_password.txt`.
+Generate a password for the database in a file named `postgres_password.txt`.
 ```
-openssl rand -base64 12 > postgres_password.txt
+openssl rand -base64 -out postgres_password.txt 8
 ```
 
-Create a database connection string from the value of `postgres_password.txt` into a file named `database_url.txt`.
+Create a database connection string from the value of `postgres_password.txt` in a file named `database_url.txt`.
 ```
-echo postgresql://postgres:`cat postgres_password.txt`@db:5432/mydb > database_url.txt
+echo "postgresql://postgres:`cat postgres_password.txt`@db:5432/mydb" > database_url.txt
 ```
 
 Download the deployment script.
@@ -42,3 +42,10 @@ Do the thing.
 ```
 docker compose up -d --build
 ```
+
+Access the frontend from http://localhost:8080/api/display
+
+## TODO
+
+- Add task scheduler
+- Add taask worker
