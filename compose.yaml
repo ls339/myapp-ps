@@ -1,0 +1,27 @@
+name: myapp-ps
+services:
+  db:
+    build: https://github.com/ls339/myapp-ps.git#ls339/dev:db
+    environment:
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+      POSTGRES_DB: mydb
+    secrets:
+      - postgres_password
+  backend:
+    build: https://github.com/ls339/myapp-ps.git#ls339/dev:backend
+    environment:
+      DATABASE_URL_FILE: /run/secrets/database_url
+    secrets:
+    - database_url
+  frontend:
+    build: https://github.com/ls339/myapp-ps.git#ls339/dev:frontend
+    ports:
+      - 8080:8080
+    environment:
+      BACKEND_URL: http://backend:5001
+secrets:
+  postgres_password: 
+    file: ./postgres_password.txt
+  database_url:
+    file: ./database_url.txt
+    
