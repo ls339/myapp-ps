@@ -16,7 +16,7 @@ def get_session():
 SessionDep = Annotated[Session, Depends(get_session)]
 
 
-@app.get("/strings/")
+@app.get("/api/strings/")
 def read_strings(
     session: SessionDep,
     offset: int = 0,
