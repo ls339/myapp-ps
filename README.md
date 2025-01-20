@@ -36,9 +36,9 @@ Download the deployment script.
 curl -O https://raw.githubusercontent.com/ls339/myapp-ps/refs/heads/ls339/dev/compose.yaml
 ```
 
-### Running
+### Deployment
 
-Do the thing.
+Use docker compose to deploy the containers locally.
 ```
 docker compose up -d --build
 ```
@@ -54,8 +54,3 @@ docker compose down
 ```
 cd .. && rm -rf myapps-ps
 ```
-
-## TODO
-
-- Add task scheduler
-- Add task worker
