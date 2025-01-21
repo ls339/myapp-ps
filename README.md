@@ -33,7 +33,7 @@ echo "postgresql://postgres:`cat postgres_password.txt`@db:5432/mydb" > database
 
 Download the deployment script.
 ```
-curl -O https://raw.githubusercontent.com/ls339/myapp-ps/refs/heads/ls339/main/compose.yaml
+curl -O https://raw.githubusercontent.com/ls339/myapp-ps/refs/heads/main/compose.yaml
 ```
 
 ### Deployment
@@ -52,5 +52,5 @@ docker compose down --rmi "all"
 ```
 
 ```
-cd ..;rm -rf myapps-ps
+cd .. && rm -rf myapp-ps
 ```
