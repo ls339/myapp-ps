@@ -11,7 +11,8 @@ app.get('/', async (req, res) => {
 app.get('/api/display', async (req, res) => {
   try {
     const response = await axios.get(BACKEND_URL);
-    res.json(response.data);
+    // A cheat since we know there is only one value returned.
+    res.send(response.data[0]["string_value"]);
   } catch (error) {
     res.status(500).send('Error fetching string.');
   }
