@@ -4,6 +4,10 @@ const app = express();
 
 const BACKEND_URL = process.env.BACKEND_URL + '/api/strings';
 
+app.get('/', async (req, res) => {
+  res.redirect('/api/display');
+});
+
 app.get('/api/display', async (req, res) => {
   try {
     const response = await axios.get(BACKEND_URL);

@@ -23,7 +23,7 @@ mkdir myapp-ps && cd myapp-ps
 
 Generate a password for the database in a file named `postgres_password.txt`.
 ```
-openssl rand -base64 -out postgres_password.txt 8
+openssl rand -base64 -out postgres_password.txt 6
 ```
 
 Create a database connection string from the value of `postgres_password.txt` in a file named `database_url.txt`.
